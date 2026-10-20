@@ -1,0 +1,67 @@
+
+<nav class="bg-gray-400 fixed w-full z-20 top-0 start-0 border-b border-default ">
+  <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+ 
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img  src="/images/freshcart-logo.svg" alt="">
+    </a>
+    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+    </button>
+    <div class="hidden w-full md:flex md:flex-1 md:items-center  md:justify-between md:w-auto" id="navbar-default">
+      @if (isLoggedIn()) {
+        <ul class=" capitalize font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+        <li>
+          <a class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page" routerLink="home" routerLinkActive="bg-gray-700 border-[4px] border-gray-700 text-white">Home</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded text-gray-200  md:p-0" aria-current="page" routerLink="cart" routerLinkActive="bg-gray-700 border-[4px] border-gray-700 text-white">cart</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded text-gray-200  md:p-0" aria-current="page" routerLink="products" routerLinkActive="bg-gray-700 border-[4px] border-gray-700 text-white">products</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded text-gray-200  md:p-0" aria-current="page" routerLink="categories" routerLinkActive="bg-gray-700 border-[4px] border-gray-700 text-white">categories</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded text-gray-200  md:p-0" aria-current="page" routerLink="contact" routerLinkActive="bg-gray-700 border-[4px] border-gray-700 text-white">contact</a>
+        </li>
+       
+      </ul>
+      }
+      <ul class=" capitalize font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+        <li>
+          <a href="#" class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page"><i class="fab fa-instagram "></i></a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page"><i class="fab fa-facebook "></i></a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page"><i class="fab fa-twitter "></i></a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page"><i class="fab fa-linkedin "></i></a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page"><i class="fab fa-youtube "></i></a>
+        </li>
+        @if (isLoggedIn()) {
+           <li>
+          <a class="block py-2 px-3 rounded text-gray-200 md:p-0 cursor-pointer" aria-current="page">SignOut</a>
+        </li>
+        }
+        @else{
+          <li>
+          <a href="#" class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page" routerLink="login" routerLinkActive="bg-gray-700 border-[4px] border-gray-700 text-white">Login</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 rounded text-gray-200 md:p-0" aria-current="page" routerLink="register" routerLinkActive="bg-gray-700 border-[4px] border-gray-700 text-white">Register</a>
+        </li>
+        }
+       
+      </ul>
+
+    </div>
+  </div>
+</nav>

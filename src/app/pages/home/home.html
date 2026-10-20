@@ -1,0 +1,59 @@
+<section class="w-[95%] m-auto">
+  <div class="parent grid md:grid-cols-[70%_minmax(0,_1fr)] ">
+    <div>
+      <owl-carousel-o [options]="mainSliderOptions">
+        <ng-template carouselSlide><img src="images/slider-1.png" alt="" class="w-full h-[300px] object-cover" /></ng-template>  
+        <ng-template carouselSlide><img src="images/slider-4.jpeg" alt="" class="w-full h-[300px] object-cover" /></ng-template>  
+        <ng-template carouselSlide><img src="images/slider-5.jpeg" alt="" class="w-full h-[300px] object-cover" /></ng-template>  
+      </owl-carousel-o>
+    </div>
+    <div>
+      <img src="images/slider-2.jpeg" alt="" class="h-[150px] w-[100%] object-cover"/>
+      <img src="images/slider-3.jpeg" alt="" class="h-[150px] w-[100%] object-cover"/>
+    </div>
+  </div>
+</section>
+
+
+<section class="w-[95%] m-auto py-4">
+  <div class="container mx-auto">
+      <h3>Popular Categories:-</h3>
+        <owl-carousel-o [options]="customOptions">
+
+          @for (cat of myCategories; track cat._id) {
+            <ng-template carouselSlide>
+              <img [src]="cat.image" alt="" class="w-full h-[250px] object-cover" />
+              <h3>{{cat.name}}</h3>
+            </ng-template>
+          }
+
+        </owl-carousel-o>
+  </div>
+</section>
+
+
+<section class="w-[95%] m-auto py-4">
+  <div class="container mx-auto">
+       <h3>Popular Products:</h3>
+    <div class="parent grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+      @for(prod of myProducts; track prod._id){
+        <div class="card border border-green-400/50 rounded-md overflow-hidden shadow relative p-1">
+        <div class="card-img">
+          <img [src]="prod.imageCover" class="w-full h-[250px] object-cover" alt="" />
+        </div>
+        <div class="card-body px-2 py-4">
+          <h4 class="text-green-500 text-xs">{{prod.category.name}}</h4>
+          <h3 class="font-medium"> {{prod.title.split(" ",2).join(" ")}} </h3>
+          <div class="flex justify-between items-center">
+            <span>{{prod.price}} EGP</span>
+            <div class="flex items-center">
+              <i class="fas fa-star text-yellow-300"></i>
+              <span class="text-gray-500">{{prod.ratingsAverage}}</span>
+            </div>
+          </div>
+        </div>
+      </div> 
+      }                                                     
+    </div>
+  </div>
+</section>
